@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Link = ({ filter, visibilityFilter, children, onClick }) => {
-  const active = filter === visibilityFilter;
+const Link = ({ filter, stateFilter, children, onClick }) => {
+  const active = filter === stateFilter;
   return (
     <button
        onClick={onClick}
@@ -18,7 +18,7 @@ const Link = ({ filter, visibilityFilter, children, onClick }) => {
 
 Link.propTypes = {
   filter: PropTypes.string.isRequired,
-  visibilityFilter: PropTypes.string.isRequired,
+  stateFilter: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired
 }

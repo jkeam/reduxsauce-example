@@ -2,19 +2,19 @@ import { VisibilityFilters } from '../constants'
 import { createActions, createReducer } from 'reduxsauce'
 
 const { Types, Creators } = createActions({
-  setVisibilityFilter: ['visibilityFilter']
+  setFilter: ['filter']
 })
 
 export const VisibilityTypes = Types
 export default Creators;
 
 export const INITIAL_STATE = {
-  visibilityFilter: VisibilityFilters.SHOW_ALL
+  filter: VisibilityFilters.SHOW_ALL
 }
 
-const setVisibilityFilter = (state = INITIAL_STATE, { visibilityFilter }) => ({ visibilityFilter })
+const setFilter = (state = INITIAL_STATE, { filter }) => ({ filter })
 
 export const reducer = createReducer(INITIAL_STATE, {
-  [Types.SET_VISIBILITY_FILTER]: setVisibilityFilter
+  [Types.SET_FILTER]: setFilter
 })
 
