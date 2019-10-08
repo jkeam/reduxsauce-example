@@ -1,17 +1,38 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Todo from './Todo'
+import TodoFilter from './TodoFilter'
 
-const TodoList = ({ todos, toggleTodo }) => (
-  <ul>
-    {todos.map(todo =>
-      <Todo
-        key={todo.id}
-        {...todo}
-        onClick={() => toggleTodo(todo.id)}
-      />
-    )}
-  </ul>
+const TodoList = ({ todos, toggleTodo, allTodoCount }) => (
+  <section className="section">
+    {allTodoCount > 0 &&
+      <div className="card article">
+        <div className="card-content">
+          <div className="content article-body">
+            <h1 className="title">All Todos</h1>
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                </tr>
+              </thead>
+              <tbody>
+                {todos.map(todo =>
+                  <Todo
+                    key={todo.id}
+                    {...todo}
+                    onClick={() => toggleTodo(todo.id)}
+                  />
+                )}
+              </tbody>
+            </table>
+            <TodoFilter />
+          </div>
+        </div>
+      </div>
+    }
+  </section>
+
 )
 
 TodoList.propTypes = {
@@ -20,7 +41,8 @@ TodoList.propTypes = {
     completed: PropTypes.bool.isRequired,
     text: PropTypes.string.isRequired
   }).isRequired).isRequired,
-  toggleTodo: PropTypes.func.isRequired
+  toggleTodo: PropTypes.func.isRequired,
+  allTodoCount: PropTypes.number.isRequired
 }
 
 export default TodoList
