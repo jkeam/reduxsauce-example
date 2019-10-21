@@ -1,6 +1,7 @@
 import { createActions, createReducer } from 'reduxsauce'
 
 const { Types, Creators } = createActions({
+  reset: null,
   addTodo: ['id', 'text'],
   toggleTodo: ['id'],
   removeTodo: ['id']

@@ -13,8 +13,8 @@ const Todo = ({ onClick, removeTodo, completed, text }) => (
     </td>
     <td>
       <button className="button is-secondary" onClick={removeTodo}>
-        <span class="icon">
-          <i class="fas fa-trash"></i>
+        <span className="icon">
+          <i className="fas fa-trash"></i>
         </span>
       </button>
     </td>
