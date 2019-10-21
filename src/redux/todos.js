@@ -3,6 +3,7 @@ import { createActions, createReducer } from 'reduxsauce'
 const { Types, Creators } = createActions({
   addTodo: ['id', 'text'],
   toggleTodo: ['id'],
+  removeTodo: ['id']
 })
 
 export const TodosTypes = Types
@@ -35,8 +36,13 @@ const toggleTodo = (state = INITIAL_STATE, { id }) => {
   }
 }
 
+const removeTodo = (state = INITIAL_STATE, { id }) => ({
+  todos: (state.todos || []).filter(todo => todo.id !== id)
+})
+
 export const reducer = createReducer(INITIAL_STATE, {
   [Types.ADD_TODO]: addTodo,
-  [Types.TOGGLE_TODO]: toggleTodo
+  [Types.TOGGLE_TODO]: toggleTodo,
+  [Types.REMOVE_TODO]: removeTodo
 })
 

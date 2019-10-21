@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Todo from './Todo'
 import TodoFilter from './TodoFilter'
 
-const TodoList = ({ todos, toggleTodo, allTodoCount }) => (
+const TodoList = ({ todos, toggleTodo, removeTodo, allTodoCount }) => (
   <section className="section">
     {allTodoCount > 0 &&
       <div className="card article">
@@ -14,6 +14,7 @@ const TodoList = ({ todos, toggleTodo, allTodoCount }) => (
               <thead>
                 <tr>
                   <th>Item</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -22,6 +23,7 @@ const TodoList = ({ todos, toggleTodo, allTodoCount }) => (
                     key={todo.id}
                     {...todo}
                     onClick={() => toggleTodo(todo.id)}
+                    removeTodo={() => removeTodo(todo.id)}
                   />
                 )}
               </tbody>
@@ -42,6 +44,7 @@ TodoList.propTypes = {
     text: PropTypes.string.isRequired
   }).isRequired).isRequired,
   toggleTodo: PropTypes.func.isRequired,
+  removeTodo: PropTypes.func.isRequired,
   allTodoCount: PropTypes.number.isRequired
 }
 
