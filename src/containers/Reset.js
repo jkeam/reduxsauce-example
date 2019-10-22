@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import TodoActions from '../redux/todos'
-import FilterActions from '../redux/filters'
 
 const Reset = ({ reset }) => (
   <div>
