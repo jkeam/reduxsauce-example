@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux'
 import { resettableReducer } from 'reduxsauce'
 import { reducer as todosReducer } from './todos'
-import { reducer as filterReducer } from './filters';
+import { reducer as filterReducer } from './filters'
+import { reducer as themeReducer } from './themes'
 
 const resettable = resettableReducer('RESET')
 
@@ -9,5 +10,6 @@ const resettable = resettableReducer('RESET')
 // RESET event is dispatchable via the Todo reducer
 export default combineReducers({
   todos: resettable(todosReducer),
-  filters: resettable(filterReducer)
+  filters: resettable(filterReducer),
+  themes: themeReducer
 })
