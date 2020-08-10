@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux'
 import TodoActions from '../redux/todos'
-const uuidv1 = require('uuid/v1')
+import { v4 as uuidv4 } from 'uuid';
 
 const isValid = (text) => (text && text.trim())
 const AddTodo = ({ addTodo }) => {
@@ -17,7 +17,7 @@ const AddTodo = ({ addTodo }) => {
               if (!isValid(text)) {
                 return
               }
-              addTodo(uuidv1(), text)
+              addTodo(uuidv4(), text)
               setText('')
             }}>
               <div className="field">
