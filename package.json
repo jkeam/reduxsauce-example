@@ -1,9 +1,12 @@
 {
-  "name": "todos",
+  "name": "reduxsauce-example",
   "version": "0.0.2",
   "private": true,
   "devDependencies": {
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^3.4.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2"
   },
   "dependencies": {
     "prop-types": "^15.7.2",
@@ -20,10 +23,19 @@
     "eject": "react-scripts eject",
     "test": "react-scripts test --env=node"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
