@@ -4,7 +4,7 @@ This repo is created to illustrate how to use reduxsauce.
 
 
 ## Prerequisuites
-1.  Node v12+
+1.  Node v20+
 2.  Yarn v1.22+
 3.  Serve v11.x+ - Only needed for production serving. `yarn global add serve`
 
